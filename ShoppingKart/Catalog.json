@@ -1,0 +1,57 @@
+{
+    "categories": [
+                   {
+                   "name": "Electronics",
+                   "items": [
+                            {
+                            "id": "E1",
+                            "name": "Television",
+                            "description": "",
+                            "url": "tv.jpeg",
+                            "price": 25000
+                            },
+                            {
+                            "id": "E2",
+                            "name": "Refrigerator",
+                            "description": "",
+                            "url": "freezer.jpeg",
+                            "price": 13500
+                            },
+                            {
+                            "id": "E3",
+                            "name": "Washing Machine",
+                            "description": "",
+                            "url": "washingm.jpeg",
+                            "price": 15000
+                            }
+                        ]
+                   },
+                   {
+                   "name": "Furniture",
+                   "items": [
+                            {
+                            "id": "F1",
+                            "name": "Table",
+                            "description": "",
+                            "url": "table.jpeg",
+                            "price": 2500
+                            },
+                            {
+                            "id": "F2",
+                            "name": "Chair",
+                            "description": "",
+                            "url": "chair.jpeg",
+                            "price": 1700
+                            },
+                            {
+                            "id": "F3",
+                            "name": "Almirah",
+                            "description": "",
+                            "url": "almirah.jpeg",
+                            "price": 9000
+                            }
+                        ]
+                   }
+                   
+                ]
+}
