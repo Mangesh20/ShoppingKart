@@ -2,7 +2,7 @@
 //  CategoriesViewController.swift
 //  ShoppingKart
 //
-//  Created by Mangesh Tekale on 09/01/18.
+//  Created by Sampada on 09/01/18.
 //  Copyright © 2018 Sampada. All rights reserved.
 //
 

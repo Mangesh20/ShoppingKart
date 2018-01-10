@@ -2,7 +2,7 @@
 //  CoreDataHelper.swift
 //  ShoppingKart
 //
-//  Created by Mangesh Tekale on 1/10/18.
+//  Created by Sampada on 1/10/18.
 //  Copyright © 2018 Sampada. All rights reserved.
 //
 
