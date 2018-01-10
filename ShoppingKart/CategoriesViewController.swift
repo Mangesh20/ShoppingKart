@@ -17,7 +17,12 @@ struct Product {
     var url: String?
     var code: String?
     var price: Int?
+    init() {
+        
+    }
+    
     init(dict: [String: Any]) {
+        self.init()
         self.name = dict["name"] as? String
         self.idProduct = dict["id"] as? String
         self.url = dict["url"] as? String
@@ -48,8 +53,19 @@ class CategoriesViewController: UITableViewController {
         super.viewDidLoad()
         self.parseData()
         self.title = "Categories"
+        self.addCartButtonOnRightSide()
     }
 
+    func addCartButtonOnRightSide()  {
+        let btn = UIBarButtonItem(title: "Cart", style: UIBarButtonItemStyle.plain, target: self, action: #selector(self.buttonMoveToCartTapped))
+        self.navigationItem.rightBarButtonItem = btn
+    }
+
+    func buttonMoveToCartTapped()  {
+        let vc = CartsViewController.storyboardInstance()
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
     func parseData() {
         if let path = Bundle.main.path(forResource: "Catalog", ofType: "json")
         {
@@ -96,4 +112,6 @@ class CategoriesViewController: UITableViewController {
         vc.category = cat
         self.navigationController?.pushViewController(vc, animated: true)
     }
+    
+    
 }

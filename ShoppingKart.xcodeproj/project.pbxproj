@@ -21,6 +21,9 @@
 		84AB1A5E2005457A00E6BB27 /* tv.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 84AB1A582005457A00E6BB27 /* tv.jpeg */; };
 		84AB1A5F2005457A00E6BB27 /* washingm.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 84AB1A592005457A00E6BB27 /* washingm.jpeg */; };
 		84AB1A622005469300E6BB27 /* ProductViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84AB1A612005469300E6BB27 /* ProductViewController.swift */; };
+		8667DF8B2006327F003D7C3B /* CartsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8667DF8A2006327E003D7C3B /* CartsViewController.swift */; };
+		8667DF8E2006360A003D7C3B /* Kart.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8667DF8C2006360A003D7C3B /* Kart.xcdatamodeld */; };
+		8667DF9020063F98003D7C3B /* CoreDataHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8667DF8F20063F98003D7C3B /* CoreDataHelper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +43,9 @@
 		84AB1A582005457A00E6BB27 /* tv.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = tv.jpeg; sourceTree = "<group>"; };
 		84AB1A592005457A00E6BB27 /* washingm.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = washingm.jpeg; sourceTree = "<group>"; };
 		84AB1A612005469300E6BB27 /* ProductViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductViewController.swift; sourceTree = "<group>"; };
+		8667DF8A2006327E003D7C3B /* CartsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartsViewController.swift; sourceTree = "<group>"; };
+		8667DF8D2006360A003D7C3B /* Kart.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Kart.xcdatamodel; sourceTree = "<group>"; };
+		8667DF8F20063F98003D7C3B /* CoreDataHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataHelper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,11 +83,14 @@
 				84AB1A502005345500E6BB27 /* CategoriesViewController.swift */,
 				84AB1A52200541D800E6BB27 /* ProductsViewController.swift */,
 				84AB1A612005469300E6BB27 /* ProductViewController.swift */,
+				8667DF8A2006327E003D7C3B /* CartsViewController.swift */,
+				8667DF8F20063F98003D7C3B /* CoreDataHelper.swift */,
 				84AB1A4020052F5300E6BB27 /* Main.storyboard */,
 				84AB1A4320052F5300E6BB27 /* Assets.xcassets */,
 				84AB1A4520052F5300E6BB27 /* LaunchScreen.storyboard */,
 				84AB1A4820052F5300E6BB27 /* Info.plist */,
 				84AB1A4E20052F7300E6BB27 /* Catalog.json */,
+				8667DF8C2006360A003D7C3B /* Kart.xcdatamodeld */,
 			);
 			path = ShoppingKart;
 			sourceTree = "<group>";
@@ -179,10 +188,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8667DF8B2006327F003D7C3B /* CartsViewController.swift in Sources */,
 				84AB1A53200541D800E6BB27 /* ProductsViewController.swift in Sources */,
 				84AB1A512005345500E6BB27 /* CategoriesViewController.swift in Sources */,
+				8667DF9020063F98003D7C3B /* CoreDataHelper.swift in Sources */,
 				84AB1A622005469300E6BB27 /* ProductViewController.swift in Sources */,
 				84AB1A3D20052F5300E6BB27 /* AppDelegate.swift in Sources */,
+				8667DF8E2006360A003D7C3B /* Kart.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -344,8 +356,22 @@
 				84AB1A4D20052F5300E6BB27 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		8667DF8C2006360A003D7C3B /* Kart.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				8667DF8D2006360A003D7C3B /* Kart.xcdatamodel */,
+			);
+			currentVersion = 8667DF8D2006360A003D7C3B /* Kart.xcdatamodel */;
+			path = Kart.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 84AB1A3120052F5200E6BB27 /* Project object */;
 }

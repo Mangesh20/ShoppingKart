@@ -31,8 +31,48 @@ class ProductViewController: UIViewController {
     
 
     @IBAction func btnAddToCartTapped(_ sender: Any) {
+        if let products = CoreDataHelper.fetchAllCarts() {
+            
+            var isProductInCart = false
+            for p in products {
+                if p.idProduct == product?.idProduct {
+                    let alert = UIAlertController(title: "Alert", message: "Product already in cart.", preferredStyle: UIAlertControllerStyle.alert)
+                    alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.cancel, handler: nil))
+                    alert.addAction(UIAlertAction(title: "Go To Cart", style: UIAlertActionStyle.default, handler: { (action) in
+                        self.buttonMoveToCartTapped()
+                    }))
+
+                    self.present(alert, animated: true, completion: nil)
+                    isProductInCart = true
+                }
+            }
+            
+            if !isProductInCart {
+                self.addProductToCart()
+            }
         
+        } else {
+             self.addProductToCart()
+        }
         
+    
+        
+    }
+    
+    func addProductToCart()  {
+        CoreDataHelper.addCart(idProduct: product!.idProduct!, price: product!.price!, imgUrl: product!.url!, name: product!.name!)
+        let alert = UIAlertController(title: "Alert", message: "Product added in cart.", preferredStyle: UIAlertControllerStyle.alert)
+        alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.cancel, handler: nil))
+        alert.addAction(UIAlertAction(title: "Go To Cart", style: UIAlertActionStyle.default, handler: { (action) in
+            self.buttonMoveToCartTapped()
+        }))
+        self.present(alert, animated: true, completion: nil)
+
+    }
+
+    func buttonMoveToCartTapped()  {
+        let vc = CartsViewController.storyboardInstance()
+        self.navigationController?.pushViewController(vc, animated: true)
     }
 
 }
