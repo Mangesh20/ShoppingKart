@@ -42,7 +42,7 @@ class ProductViewController: UIViewController {
             //Check if product is already present in cart
             for p in products {
                 if p.idProduct == product?.idProduct {
-                    self.showAlertForProductAddition()
+                    self.showAlertForProudctAlereadyPresent()
                     isProductInCart = true
                 }
             }
@@ -62,7 +62,7 @@ class ProductViewController: UIViewController {
         self.showAlertForProductAddition()
     }
     
-    func showAlertForProudctAlerayPresent()  {
+    func showAlertForProudctAlereadyPresent()  {
         let alert = UIAlertController(title: "Alert", message: "Product already in cart.", preferredStyle: UIAlertControllerStyle.alert)
         alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.cancel, handler: nil))
         alert.addAction(UIAlertAction(title: "Go To Cart", style: UIAlertActionStyle.default, handler: { (action) in
