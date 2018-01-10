@@ -9,11 +9,9 @@
 import UIKit
 
 class ProductCell: UITableViewCell {
-    
+    //Custom cell for displaying product details 
     @IBOutlet weak var lblName: UILabel!
     @IBOutlet weak var lblPrice: UILabel!
-    
-    
 }
 
 class ProductsViewController: UITableViewController {
@@ -27,8 +25,19 @@ class ProductsViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = category?.name
+        self.addCartButtonOnRightSide()
     }
     
+    func addCartButtonOnRightSide()  {
+        let btn = UIBarButtonItem(title: "Cart", style: UIBarButtonItemStyle.plain, target: self, action: #selector(self.buttonMoveToCartTapped))
+        self.navigationItem.rightBarButtonItem = btn
+    }
+    
+    func buttonMoveToCartTapped()  {
+        let vc = CartsViewController.storyboardInstance()
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+
 
     // MARK: - Table view data source
 
@@ -53,6 +62,4 @@ class ProductsViewController: UITableViewController {
         self.navigationController?.pushViewController(vc, animated: true)
     }
 
-    
-    
 }

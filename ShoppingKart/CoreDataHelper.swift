@@ -11,6 +11,7 @@ import CoreData
 
 struct CoreDataHelper {
     
+    //adding the product to cart
     static func addCart(idProduct: String, price:Int, imgUrl:String, name: String) {
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
             return
@@ -36,7 +37,7 @@ struct CoreDataHelper {
         }
     }
 
-    
+    //getting all the products from cart
     static func fetchAllCarts() -> [Product]? {
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
             return nil
@@ -64,6 +65,7 @@ struct CoreDataHelper {
         return nil
     }
     
+    //delete product from Cart
     static func deleteCartItem(id:String) {
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
             return

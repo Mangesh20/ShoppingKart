@@ -51,8 +51,14 @@ class CategoriesViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //getting all the categories and products from JSON file Catalog
         self.parseData()
+       
+        //Title for navigatio bar
         self.title = "Categories"
+        
+        //Adding navigation bar button on right side
         self.addCartButtonOnRightSide()
     }
 
@@ -83,22 +89,14 @@ class CategoriesViewController: UITableViewController {
         }
         self.tableView.reloadData()
     }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
 
     // MARK: - Table view data source
-
-
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.categoriesArray.count 
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "CategoryCell", for: indexPath)
-
         // Configure the cell...
         let cat = self.categoriesArray[indexPath.row]
         cell.textLabel?.text = cat.name
@@ -112,6 +110,5 @@ class CategoriesViewController: UITableViewController {
         vc.category = cat
         self.navigationController?.pushViewController(vc, animated: true)
     }
-    
     
 }

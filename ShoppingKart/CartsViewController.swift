@@ -33,25 +33,34 @@ class CartsViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        //Get products from database and reload the table view
         self.products = CoreDataHelper.fetchAllCarts()
+        
+        //set title to navigation header
         self.title = "Cart"
     }
 
     @IBAction func btnPlaceOrderTapped(_ sender: Any) {
+      
+        //Delete all the products as order is placed
         if let proudcts = self.products  {
             for p in proudcts {
                 CoreDataHelper.deleteCartItem(id:p.idProduct!)
             }
         }
         
+        //Show alert to user abour successfull order
         let alert = UIAlertController(title: "Alert", message: "Order Placed Successfully", preferredStyle: UIAlertControllerStyle.alert)
         alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: { (action) in
+            
+            //Get products from database and reload the table view
             self.products = CoreDataHelper.fetchAllCarts()
         }))
         self.present(alert, animated: true, completion: nil)
 
     }
     
+    //creates and returns storyboard instance of CartsViewController
     static func storyboardInstance() -> CartsViewController {
         return UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "CartsViewController") as! CartsViewController
     }
@@ -78,28 +87,30 @@ class CartsViewController: UITableViewController {
     
     
     override func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+    
         self.footerView.frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 110)
         
         var totalPrice : Int = 0
         if let allProducts = products {
             if allProducts.count == 0 {
                 self.lblTotalPrice.text = "Your Cart is Empty"
-                self.btnPlaceOrder.isUserInteractionEnabled = false
+                self.btnPlaceOrder.isHidden = true
             } else {
                 for p in allProducts  {
                     totalPrice += p.price!
                 }
                 self.lblTotalPrice.text = "Total Price: " + String(describing: totalPrice)
-                self.btnPlaceOrder.isUserInteractionEnabled = true
+                self.btnPlaceOrder.isHidden = false
             }
             
         } else {
             self.lblTotalPrice.text = "Your Cart is Empty"
-            self.btnPlaceOrder.isUserInteractionEnabled = false
+            self.btnPlaceOrder.isHidden = true
         }
         
         return self.footerView
     }
+    
     override func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
         return 110
     }
